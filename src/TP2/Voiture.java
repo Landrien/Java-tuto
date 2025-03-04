@@ -22,10 +22,10 @@ public class Voiture extends Vehicule{
             pourcentage_marque = 0.1;
 
         } else if (super.marque.equals("Ferrari") || super.marque.equals("Porsche")) {
-            pourcentage_marque= 0.2;
+            pourcentage_marque= -0.2;
         }
-        double pourcentage_total = 1-(pourcentage_kilometrage + pourcentatge_annee + pourcentage_marque);
-        super.prix_courant = super.prix_achat*pourcentage_total;
+        double pourcentage_total = pourcentage_kilometrage + pourcentatge_annee + pourcentage_marque;
+        super.prix_courant = super.prix_achat-super.prix_achat*pourcentage_total;
         if (super.prix_courant <= 0){
             super.prix_courant = 0;
         }
@@ -35,6 +35,6 @@ public class Voiture extends Vehicule{
     @Override
     void affiche() {
         super.affiche();
-        System.out.println("cylindre="+cylindre+"; nombre de portes="+nbr_portes+"; puissance="+puissance+"; kilométrage="+kilometrage);
+        System.out.println("; cylindre="+cylindre+"; nombre de portes="+nbr_portes+"; puissance="+puissance+"; kilométrage="+kilometrage);
     }
 }

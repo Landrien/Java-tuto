@@ -18,7 +18,7 @@ public class Vehicule {
        this.prix_courant= this.prix_achat*((0.01)*(anneActuelle-this.annee_achat));
     }
 
-    void affiche (){
-        System.out.println("marque ="+this.marque+"; année d'achat="+ this.annee_achat+"; prix d'achat="+this.prix_achat+"; prix courant="+this.prix_courant);
+    void affiche(){
+        System.out.print("marque ="+this.marque+"; année d'achat="+ this.annee_achat+"; prix d'achat="+this.prix_achat+"; prix courant="+this.prix_courant);
     }
 }
