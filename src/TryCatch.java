@@ -3,6 +3,41 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TryCatch {
+    public static void saisieCorrecte (){
+        int a = 0;
+
+        System.out.println("Donne moi un nombre");
+        while (true) {
+            try {
+                Scanner sc = new Scanner(System.in);
+                a = sc.nextInt();
+                break;
+            } catch (InputMismatchException inputMismatchException) {
+                System.out.println("Erreur de saisie");
+
+            }
+        }
+            System.out.println("Le résultat est "+ a);
+    }
+
+    public static void saisieCorrecte2 (){
+        String a = " ";
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Donne moi un nombre");
+        int b = 0;
+        while (true) {
+            try {
+                a = sc.next();
+                b = Integer.parseInt(a);
+                break;
+            } catch (NumberFormatException numberFormatException) {
+                System.out.println("Erreur : Veillez entrer un nombre valide");
+            }
+        }
+
+
+        System.out.println("Le résultat est "+ b);
+    }
 
     static void saisieCorrect3(){
         int[] a = {1, 2, 3, 4, 5};
